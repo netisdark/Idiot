@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style>
+        div{
+            border-radius: 39px;
+background: #ffffff;
+box-shadow:  24px 24px 50px #666666,
+             -24px -24px 50px #ffffff;
+             width:70%;
+             height:20vh;
+             top:50%;
+             left:50%;
+             position: absolute;
+             transform: translate(-50%,-50%);
+             display:flex;
+             flex-direction:column;
+             justify-content:center;
+             align-items:center;
+        }
+        p, div{
+            font-size:50px;
+        }
+        button{
+            font-size:40px;
+            margin:10px 30px;
+            padding:10px 30px;
+            background-color:#ffffff;
+            border:1px solid black;
+            border-radius:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="all"><p>Are you an idiot?</p>
+    <nav><button id="one" onclick="yes()">Yes</button><button id="two" onclick="no()">No</button></nav></div>
+    <script>
+        function yes(){
+            document.getElementById("all").innerHTML="HAHA. i knew it!";
+        }
+        function no(){
+            var postop=Math.floor(Math.random() * 101);
+            var posleft=Math.floor(Math.random() * 101);
+            var div = document.createElement("p");
+            div.textContent="Lie detected";
+            div.style="position:absolute; top:"+postop+"vh;left:"+posleft+"%;trasform:translate(-50%,-50%)";
+            document.body.appendChild(div);
+        }
+    </script>
+</body>
+</html>
